@@ -134,12 +134,6 @@ if predict_btn:
             "Low estimated probability. Maintain healthy habits and routine screening."
         )
 
-    # 7) Optional: show model explanation snippet (coefficients) for trust
-    if st.expander("Show model feature impact (log-odds coefficients)"):
-        coef_df = pd.DataFrame({"Feature": input_df.columns, "Coef": model.coef_[0]})
-        coef_df["Odds_ratio"] = np.exp(coef_df["Coef"])
-        st.dataframe(coef_df.style.format({"Coef": "{:.4f}", "Odds_ratio": "{:.3f}"}))
-
     # 8) Fun finishing touch: celebrate low-risk results
     if prob < 0.10:
         st.balloons()
