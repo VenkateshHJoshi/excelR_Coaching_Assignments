@@ -26,7 +26,7 @@ st.write(
 # Load model and scaler (cached for speed)
 # -------------------------
 @st.cache_resource
-def load_artifacts(model_path="/Users/tonystark/Desktop/Data_Science/pickle_file/diabetes_logistic_model.pkl", scaler_path="/Users/tonystark/Desktop/Data_Science/pickle_file/diabetes_scaler.pkl"):
+def load_artifacts(model_path="diabetes_prediction/diabetes_logistic_model.pkl", scaler_path="diabetes_prediction/diabetes_scaler.pkl"):
     """Load saved model and scaler once to reuse across app interactions."""
     model = pickle.load(open(model_path, "rb"))
     scaler = pickle.load(open(scaler_path, "rb"))
